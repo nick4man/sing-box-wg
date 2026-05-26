@@ -56,13 +56,12 @@ jobs:
           gomobile bind -v \
             -androidapi 21 \
             -javapkg=io.nekohasekai \
-            -libname=box \
             -tags "with_gvisor,with_quic,with_dhcp,with_wireguard,with_utls,with_clash_api,with_awg" \
             -trimpath -ldflags="-s -w -buildid=" \
             -target=android/arm64,android/arm,android/amd64 \
             -o ./app/libs/libbox.aar \
             ../../experimental/libbox
-
+            
       - name: Grant gradlew permission
         run: chmod +x clients/android/gradlew
 
